@@ -1,0 +1,137 @@
+window.updateFlowFromJSON ({
+  "name": "Example-Workflow",
+  "TriggerNode": {
+    "NodeTypeName": "UserInputNode",
+    "Type": "MultiAgentsClient.Service.WorkflowEngine.BuiltInNodes.UserInputNode, MultiAgentsClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "Id": "1",
+    "CustomName": "UserInputNode",
+    "nodePosX": -27.816256,
+    "nodePosY": 76.4549
+  },
+  "OperationNodes": [
+    {
+      "NodeTypeName": "IfElseNode",
+      "Type": "MultiAgentsServer.Scripts.Shared.WorkflowEngine.BuiltInNodes.IfElseNode, MultiAgentsClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Id": "2",
+      "ConditionBinderEnum": 0,
+      "Conditions": [
+        {
+          "Variable": "a",
+          "Comparitor": 0,
+          "Value": "1"
+        },
+        {
+          "Variable": "b",
+          "Comparitor": 1,
+          "Value": "2"
+        }
+      ],
+      "CustomName": "IfElseNode",
+      "nodePosX": 155.49916,
+      "nodePosY": 105.04538
+    },
+    {
+      "NodeTypeName": "ToolCallNode",
+      "Type": "MultiAgentsClient.Service.WorkflowEngine.BuiltInNodes.ToolCallNode, MultiAgentsClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Id": "3",
+      "SelectedTool": "CheckFileExist",
+      "ToolCallParams": [
+        {
+          "type": null,
+          "name": null,
+          "value": null
+        }
+      ],
+      "CustomName": "ToolCallNode",
+      "nodePosX": 354.55844,
+      "nodePosY": 64.64466
+    },
+    {
+      "NodeTypeName": "ToolCallNode",
+      "Type": "MultiAgentsClient.Service.WorkflowEngine.BuiltInNodes.ToolCallNode, MultiAgentsClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Id": "3",
+      "SelectedTool": "CheckFileExist",
+      "ToolCallParams": [
+        {
+          "type": null,
+          "name": null,
+          "value": null
+        }
+      ],
+      "CustomName": "ToolCallNode",
+      "nodePosX": 354.55844,
+      "nodePosY": 64.64466
+    },
+    {
+      "NodeTypeName": "LlmNode",
+      "Type": "MultiAgentsClient.Service.WorkflowEngine.BuiltInNodes.LlmNode, MultiAgentsClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Id": "4",
+      "LlmProvider": 0,
+      "Messages": [
+        {
+          "MessageType": 1,
+          "Message": "Hello!"
+        }
+      ],
+      "GptModelEnum": 38,
+      "Temperature": 0,
+      "CustomName": "LlmNode",
+      "nodePosX": 354.55844,
+      "nodePosY": 153.74011
+    },
+    {
+      "NodeTypeName": "LlmNode",
+      "Type": "MultiAgentsClient.Service.WorkflowEngine.BuiltInNodes.LlmNode, MultiAgentsClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+      "Id": "4",
+      "LlmProvider": 0,
+      "Messages": [
+        {
+          "MessageType": 1,
+          "Message": "Hello!"
+        }
+      ],
+      "GptModelEnum": 38,
+      "Temperature": 0,
+      "CustomName": "LlmNode",
+      "nodePosX": 354.55844,
+      "nodePosY": 153.74011
+    }
+  ],
+  "Connections": [
+    {
+      "Id": "reactflow__edge-11-right-0-22-left-0",
+      "FromNodeId": "1",
+      "FromNodeOutputPortIndex": 0,
+      "ToNodeId": "2",
+      "ToNodeInputPortIndex": 0
+    },
+    {
+      "Id": "reactflow__edge-22-right-0-33-left-0",
+      "FromNodeId": "2",
+      "FromNodeOutputPortIndex": 0,
+      "ToNodeId": "3",
+      "ToNodeInputPortIndex": 0
+    },
+    {
+      "Id": "reactflow__edge-22-right-0-33-left-0",
+      "FromNodeId": "2",
+      "FromNodeOutputPortIndex": 0,
+      "ToNodeId": "3",
+      "ToNodeInputPortIndex": 0
+    },
+    {
+      "Id": "reactflow__edge-22-right-1-44-left-0",
+      "FromNodeId": "2",
+      "FromNodeOutputPortIndex": 1,
+      "ToNodeId": "4",
+      "ToNodeInputPortIndex": 0
+    },
+    {
+      "Id": "reactflow__edge-22-right-1-44-left-0",
+      "FromNodeId": "2",
+      "FromNodeOutputPortIndex": 1,
+      "ToNodeId": "4",
+      "ToNodeInputPortIndex": 0
+    }
+  ]
+});
